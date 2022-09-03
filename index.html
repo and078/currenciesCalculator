@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container pt-3 pl-3">
+        <form class="card mb-3" @submit.prevent="createContact">
+            <div class="form-group mr-5">
+                <label for="name" class="mr-3 ml-3">USD</label>
+                <h3 class="form-control" id="usd"></h3>
+            </div>
+            <div class="form-group mr-5">
+                <label for="value" class="mr-3 ml-3">RON</label>
+                <label type="text" class="form-control" id="ron">
+            </div>
+            <div class="form-group mr-5">
+                <label for="value" class="mr-3 ml-3">RUB</label>
+                <label type="text" class="form-control" id="rub">
+            </div>
+            <div class="form-group mr-5">
+                <label for="value" class="mr-3 ml-3">UAH</label>
+                <label type="text" class="form-control" id="uah">
+            </div>
+            <div class="form-group mr-5">
+                <label for="value" class="mr-3 ml-3">GBP</label>
+                <label type="text" class="form-control" id="gbp">
+            </div>
+            <div class="form-group mr-5">
+                <label for="value" class="mr-3 ml-3">EUR</label>
+                <label type="text" class="form-control" id="eur">
+            </div>
+        </form>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
