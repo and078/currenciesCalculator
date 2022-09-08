@@ -1,7 +1,6 @@
-const someDate = 1661900400000
+const someDate = 82800000
 const msPerDay = 86400000
-let now = Date.now()
-let start = (Math.trunc((now - someDate) / msPerDay)) * msPerDay + someDate
+let start = (Math.trunc((Date.now() - someDate) / msPerDay)) * msPerDay + someDate
 
 const url = `https://point.md/curs/methods/money/newrates/?start=${start}&stop=${start}`
 
