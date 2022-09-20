@@ -5,39 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Calculator</title>
+    <title>Currencies</title>
+    <script type="module" src="script.js"></script>
 </head>
-<body>
-    <div class="container pt-3 pl-3">
-        <form class="card mb-3">
+<body class="bg-dark">
+    <h4 class="text-light" id="date" style="display: flex; justify-content: center;"></h4 >
+    <div class="container" >
+        <form class="card pt-4 pl-4 pr-4 pb-4 border-light bg-dark">
             <div class="form-group mr-5">
-                <label for="name" class="mr-3 ml-3">USD</label>
-                <label type="text" class="form-control" id="usd">
+                <label for="MDL" class="mr-3 ml-3 text-light">MDL</label>
+                <input type="number" class="form-control" id="mdl">
             </div>
             <div class="form-group mr-5">
-                <label for="value" class="mr-3 ml-3">RON</label>
-                <label type="text" class="form-control" id="ron">
+                <label for="USD" class="mr-3 ml-3 text-light">USD</label>
+                <input type="number" class="form-control" id="usd">
             </div>
             <div class="form-group mr-5">
-                <label for="value" class="mr-3 ml-3">RUB</label>
-                <label type="text" class="form-control" id="rub">
+                <label for="RON" class="mr-3 ml-3 text-light">RON</label>
+                <input type="number" class="form-control" id="ron">
             </div>
             <div class="form-group mr-5">
-                <label for="value" class="mr-3 ml-3">UAH</label>
-                <label type="text" class="form-control" id="uah">
+                <label for="RUB" class="mr-3 ml-3 text-light">RUB</label>
+                <input type="number" class="form-control" id="rub">
             </div>
             <div class="form-group mr-5">
-                <label for="value" class="mr-3 ml-3">GBP</label>
-                <label type="text" class="form-control" id="gbp">
+                <label for="UAH" class="mr-3 ml-3 text-light">UAH</label>
+                <input type="number" class="form-control" id="uah">
             </div>
             <div class="form-group mr-5">
-                <label for="value" class="mr-3 ml-3">EUR</label>
-                <label type="text" class="form-control" id="eur">
+                <label for="GBP" class="mr-3 ml-3 text-light">GBP</label>
+                <input type="number" class="form-control" id="gbp">
+            </div>
+            <div class="form-group mr-5">
+                <label for="EUR" class="mr-3 ml-3 text-light">EUR</label>
+                <input type="number" class="form-control" id="eur">
             </div>
         </form>
     </div>
-    
 
-    <script src="script.js"></script>
+    <!-- <script src="diagramm.js"></script> -->
 </body>
 </html>
