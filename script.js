@@ -1,6 +1,7 @@
-import fn from "./modules/diagramm.js"
+// import fn from "./modules/diagramm.js"
 
-fn()
+// fn()
+
 
 const someDate = 82800000
 const msPerDay = 86400000
