@@ -18,7 +18,7 @@ async function fetchUrl(url){
     await fetch(url)
         .then(response => response.json())
         .then(data => {
-            Reflect.ownKeys(data).forEach((c, i) => {
+            Object.keys(data).forEach((c, i) => {
                 currenciesInMDL[c] = data[c][6][1]
             })
             currenciesInMDL['mdl'] = 1
@@ -27,7 +27,6 @@ async function fetchUrl(url){
             allData['mdl'].forEach((d, i) => {
                 d[1] = (1 / d[1])
             })
-            console.log(allData)
         })
     initFieldsFill()
 }
@@ -39,7 +38,6 @@ const initFieldsFill = () => {
     inputs.forEach(el => {
         document.getElementById(el.id).value = +((document.getElementById('mdl').value) * (currenciesInMDL['mdl'] / currenciesInMDL[el.id])).toFixed(4)
     })
-    setLabels()
 }
 
 const onChangeAnyInput = (currentCurrency) => {
@@ -129,10 +127,3 @@ const myChart = new Chart(ctx, {
         }
     }
 });
-
-// const setLabels = (chart) => {
-//     let len = chart.data.labels.length
-//     chart.data.labels.forEach((el, i) => {
-//         chart.data.labels[i] = new Date(Date.now() - msPerDay * (len - (i + 1)) ).toLocaleDateString()
-//     })
-// }
