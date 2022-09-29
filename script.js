@@ -24,7 +24,7 @@ async function fetchUrl(url){
             currenciesInMDL['mdl'] = 1
             allData = structuredClone(data)
             allData['mdl'] = allData['usd'].map(x => x.slice())
-            allData['mdl'].forEach((d, i) => {
+            allData['mdl'].forEach(d => {
                 d[1] = (1 / d[1])
             })
         })
