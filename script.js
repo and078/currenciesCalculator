@@ -18,7 +18,7 @@ async function fetchUrl(url){
     await fetch(url)
         .then(response => response.json())
         .then(data => {
-            Object.keys(data).forEach((c, i) => {
+            Object.keys(data).forEach(c => {
                 currenciesInMDL[c] = data[c][6][1]
             })
             currenciesInMDL['mdl'] = 1
