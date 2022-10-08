@@ -6,7 +6,6 @@ const currenciesInMDL = {}
 let current = ''
 let allData = {}
 
-
 document.getElementById('date').textContent = new Date(Date.now()).toLocaleDateString()
 document.getElementById('mdl').value = 100
 
@@ -24,7 +23,7 @@ async function fetchUrl(url){
             currenciesInMDL['mdl'] = 1
             allData = structuredClone(data)
             allData['mdl'] = allData['usd'].map(x => x.slice())
-            allData['mdl'].forEach((d, i) => {
+            allData['mdl'].forEach(d => {
                 d[1] = (1 / d[1])
             })
         })
@@ -33,25 +32,32 @@ async function fetchUrl(url){
 
 fetchUrl(url)
 
-
 const initFieldsFill = () => {
     inputs.forEach(el => {
         document.getElementById(el.id).value = +((document.getElementById('mdl').value) * (currenciesInMDL['mdl'] / currenciesInMDL[el.id])).toFixed(4)
     })
 }
 
+const validateFloat = (input) => {
+    let lastChar = input.value.slice(-1)
+    if(!((lastChar.charCodeAt() >= 48) && (lastChar.charCodeAt() <= 57) || (lastChar.charCodeAt() == 46)) || input.value.split('.').length > 2) {
+        input.value = input.value.slice(0, -1)
+    }
+}
+
 const onChangeAnyInput = (currentCurrency) => {
-    let currentInp = +(document.getElementById(currentCurrency.id).value)
-    inputs.forEach(el => {
-        document.getElementById(el.id).value = +(currentInp * (currenciesInMDL[currentCurrency.id] / currenciesInMDL[el.id])).toFixed(4)
-    })
+    validateFloat(currentCurrency)
+    let currentInp = parseFloat(document.getElementById(currentCurrency.id).value)
+    let withoutCurrent = Array.from(inputs).filter(el => el.id !== currentCurrency.id)
+    if(!isNaN(currentInp)) {
+        withoutCurrent.forEach(el => {
+            document.getElementById(el.id).value = +(currentInp * ((currenciesInMDL[currentCurrency.id]) / (currenciesInMDL[el.id]))).toFixed(4)
+        })
+    }
 }
 
 const onFocusInput = (currentCurrency) => {
     current = currentCurrency['id']
-    if(current == 'mdl'){
-        console.log('MDL')
-    }
     setRates(myChart, allData[current])
     setLabel(myChart, current.toUpperCase())
 }
@@ -67,15 +73,6 @@ const setRates = (chart, rates) => {
     })
     chart.update()
 }
-
-inputs.forEach( el => el.addEventListener('input', () => {
-    onChangeAnyInput(el)
-}))
-
-inputs.forEach( el => el.addEventListener('focus', () => {
-    onFocusInput(el)
-}))
-
 
 
 //chart

@@ -7,61 +7,60 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Currencies</title>
 </head>
+
 <body class="bg-dark">
     <h4 class="text-light" id="date" style="display: flex; justify-content: center;"></h4 >
     <div class="container container-lg">
       <div class="row">
         <div class="col-sm-3">
-          <form class="border-light bg-dark">
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-sm">MDL</span>
                 </div>
-                <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="mdl">
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="mdl" oninput="onChangeAnyInput(this)" onfocus="onFocusInput(this)">
             </div>
   
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-sm">USD</span>
                 </div>
-                <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="usd">
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="usd" oninput="onChangeAnyInput(this)" onfocus="onFocusInput(this)">
             </div>
   
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-sm">RON</span>
                 </div>
-                <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="ron">
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="ron" oninput="onChangeAnyInput(this)" onfocus="onFocusInput(this)">
             </div>
   
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-sm">RUB</span>
                 </div>
-                <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="rub">
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="rub" oninput="onChangeAnyInput(this)" onfocus="onFocusInput(this)">
             </div>
   
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-sm">UAH</span>
                 </div>
-                <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="uah">
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="uah" oninput="onChangeAnyInput(this)" onfocus="onFocusInput(this)">
             </div>
   
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-sm">GBP</span>
                 </div>
-                <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="gbp">
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="gbp" oninput="onChangeAnyInput(this)" onfocus="onFocusInput(this)">
             </div>
   
             <div class="input-group input-group-sm mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroup-sizing-sm">EUR</span>
                 </div>
-                <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="eur">
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="eur" oninput="onChangeAnyInput(this)" onfocus="onFocusInput(this)">
             </div>          
-          </form>
         </div>
         <div class="col-md-9">
           <canvas id="myChart"></canvas>
@@ -69,6 +68,6 @@
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-    <script type="module" src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
