@@ -1,7 +1,7 @@
 const someDate = 82800000 //23:00 1.01.1970
 const msPerDay = 86400000
 let today = (Math.trunc((Date.now() - someDate) / msPerDay)) * msPerDay + someDate
-let weekAgo = today - (msPerDay * 6) 
+let weekAgo = today - (msPerDay * 7) 
 const currenciesInMDL = {}
 let current = ''
 let allData = {}
@@ -17,8 +17,10 @@ async function fetchUrl(url){
     await fetch(url)
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             Object.keys(data).forEach(c => {
-                currenciesInMDL[c] = data[c][6][1]
+                console.log(c);
+                currenciesInMDL[c] = data[c][6][1];
             })
             currenciesInMDL['mdl'] = 1
             allData = structuredClone(data)
